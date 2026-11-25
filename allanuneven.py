@@ -9,6 +9,20 @@ def uneven_allan_deviation(
     Computes Allan Deviation for unevenly sampled time series.
     Set overlap_factor=1 for standard non-overlapping, or >1 (e.g., 4 or 8) for overlapping.
     Use adaptive median-count threshold to reject partially empty gap bins.
+
+    Arguments:
+    timestamps : array-like
+        Timestamps in what ever time units you like, this is however the reference time units for the rest.
+    values : array-like
+        Signal values corresponding to the timestamps.
+    taus : array-like
+        Array of averaging/bin times (in the same time units as timestamps).
+    overlap_factor : int, default=1
+        Factor determining the amount of overlap between adjacent bins.
+    min_fill_ratio : float, default=0.5
+        Filling bin ratio compared to the median bin count to consider a bin valid.
+    min_abs_samples : int, default=3
+        Minimum absolute number of samples required per bin.
     """
     t = np.asarray(timestamps, dtype=float)
     y = np.asarray(values, dtype=float)
