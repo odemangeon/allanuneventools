@@ -1,4 +1,3 @@
-```python
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import binned_statistic
@@ -142,5 +141,3 @@ if __name__ == "__main__":
   plt.legend()
   plt.tight_layout()
   plt.show()
-
-```
